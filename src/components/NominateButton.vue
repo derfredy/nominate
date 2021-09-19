@@ -35,8 +35,8 @@ export default {
   methods: {
     async nominate() {
       // the address we use to use for signing, as injected
-      const SENDER = '5H16fVkfiyTAPyeiw3s7SZd3YHtptbH2WW8pN7QZyQji8LGq'
-      const target = ['5C556QTtg1bJ43GDSgeowa3Ark6aeSHGTac1b2rKSXtgmSmW']
+      const SENDER = 'DXigJfMhoJz5swr8nVpY1UeWw5BFN2TAkJvYhhZUuCaajV6'
+      const target = ['DSA55HQ9uGHE5MyMouE8Geasi2tsDcu3oHR4aFkJ3VBjZG5', 'J4XkgJjMP6c1pqneV5KogJvJLM1qReXP9SAMJt33prnDdwB', 'DSpbbk6HKKyS78c4KDLSxCetqbwnsemv2iocVXwNe2FAvWC']
 
       // finds an injector for an address
       const injector = await web3FromAddress(SENDER)

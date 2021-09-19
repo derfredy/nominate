@@ -1,3 +1,3 @@
 export const config = {
-  nodeWs: 'wss://westend-rpc.polkadot.io',
+  nodeWs: 'wss://kusama-rpc.polkadot.io',
 }
