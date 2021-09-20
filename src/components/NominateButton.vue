@@ -6,7 +6,11 @@
 
 <script>
 import { ApiPromise, WsProvider } from '@polkadot/api'
-import { web3Enable, web3FromAddress, web3Accounts } from '@polkadot/extension-dapp'
+import {
+  web3Enable,
+  web3FromAddress,
+  web3Accounts,
+} from '@polkadot/extension-dapp'
 import { config } from '/config.js'
 export default {
   props: {
@@ -18,7 +22,6 @@ export default {
   data() {
     return {
       api: null,
-      // isWeb3Injected: false,
       extensions: null,
       account: null,
       allAccounts: null,
@@ -44,12 +47,7 @@ export default {
     async nominate() {
       // the address we use to use for signing, as injected
       // const SENDER = 'DXigJfMhoJz5swr8nVpY1UeWw5BFN2TAkJvYhhZUuCaajV6'
-      const target = [
-        // 'DSA55HQ9uGHE5MyMouE8Geasi2tsDcu3oHR4aFkJ3VBjZG5',
-        // 'J4XkgJjMP6c1pqneV5KogJvJLM1qReXP9SAMJt33prnDdwB',
-        // 'DSpbbk6HKKyS78c4KDLSxCetqbwnsemv2iocVXwNe2FAvWC',
-        '5ENXqYmc5m6VLMm5i1mun832xAv2Qm9t3M4PWAFvvyCJLNoR'
-      ]
+      const target = ['5ENXqYmc5m6VLMm5i1mun832xAv2Qm9t3M4PWAFvvyCJLNoR']
 
       // finds an injector for an address
       const injector = await web3FromAddress(this.$store.state.selectedAddress)
