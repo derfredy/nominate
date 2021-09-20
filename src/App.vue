@@ -6,7 +6,7 @@
           <button
             v-b-modal.wallet-modal
             type="button"
-            class="btn btn-outline-info mr-4"
+            class="btn btn-outline-info"
           >
             <span v-if="selectedAddress">
               <Identicon :address="selectedAddress" :size="22" />
@@ -57,6 +57,16 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 60px;  
+}
+
+ul.navbar-nav {
+  padding-left: 0;
+}
+
+#wallet-modal___BV_modal_outer_ {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 </style>
