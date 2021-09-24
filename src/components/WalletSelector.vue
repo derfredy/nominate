@@ -13,7 +13,7 @@
         class="account-table"
       >
         <template #cell(address)="data">
-          <Identicon :address="data.item.address" :size="24" />
+          
           <span v-if="data.item.name">
             {{ data.item.name }}<br />{{ data.item.address }}
           </span>
@@ -37,9 +37,11 @@
 import { web3Accounts, web3Enable } from '@polkadot/extension-dapp'
 import { ApiPromise, WsProvider } from '@polkadot/api'
 import { encodeAddress } from '@polkadot/keyring'
+
 import { config } from '../../config.js'
 
 export default {
+  
   data() {
     return {
       config,

@@ -8,11 +8,7 @@
             type="button"
             class="btn btn-outline-info"
           >
-            <span v-if="selectedAddress">
-              <Identicon :address="selectedAddress" :size="22" />
-              {{ selectedAddress }}
-            </span>
-            <span v-else>Connect wallet</span>
+            <span>Connect wallet</span>
           </button>
         </b-navbar-nav>
       </b-container>
@@ -57,7 +53,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;  
+  margin-top: 60px;
 }
 
 ul.navbar-nav {
