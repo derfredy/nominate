@@ -24,24 +24,27 @@
       </b-modal>
     </b-navbar>
     <b-container>
-      <b-row class="justify-content-md-center">        
-        <b-form class="mt-2 col-md-4" @submit="onSubmit">
-          <label for="input-amount">Amount in pKSM</label>
-          <b-form-input
-            id="input-amount"
-            v-model.number="amount"
-            placeholder="Enter amount"
-            type="number"
-          ></b-form-input>
-          <!-- <b-dropdown id="units" :text="selectedUnit" class="mb-0 btn-block">
-        <b-dropdown-item
-          v-for="unit in units"
-          :key="unit"
-          @click="setUnit(unit)"
-        >
-          {{ unit }}
-        </b-dropdown-item>
-      </b-dropdown> -->
+      <b-row class="justify-content-center">
+        <b-form class="mt-2 col-4" @submit="onSubmit">
+          <label for="input-amount">Amount</label>
+          <div class="row">
+            <b-form-input
+              id="input-amount"
+              v-model.number="amount"
+              placeholder="Enter amount"
+              type="number"
+              class="col-sm-8 mb-2"
+            ></b-form-input>
+            <b-dropdown id="units" :text="selectedUnit" class="mb-2 btn-block col-sm-4">
+              <b-dropdown-item
+                v-for="unit in units"
+                :key="unit"
+                @click="setUnit(unit)"
+              >
+                {{ unit }}
+              </b-dropdown-item>
+            </b-dropdown>
+          </div>
           <b-button type="submit" class="mt-2">Nominate</b-button>
         </b-form>
       </b-row>
@@ -141,7 +144,7 @@ export default {
       web3FromAddress(selectedAccount)
         .then(async (injector) => {
           this.api.setSigner(injector.signer)
-          const amount = parseFloat(this.amount)
+          const amount = this.getAmount()
           const rewardDestination = 0
           let transactions = []
           transactions.push(
